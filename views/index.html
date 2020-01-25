@@ -1,87 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Order burgers online</title>
-        <meta charset="utf-8"/>
-    </head>
-    <body>
-        <main>
-            <h1>Welcome to BurgerOnline</h1>
+<head>
+    <title>Order burgers online</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <main>
+        <h1>Welcome to BurgerOnline</h1>
 
-            <section>
-                <h2>Select a burger</h2>
-                This is where you select a burger.
-                <table>
-                    <tbody>
-                        <td>
-                            <h3>Double cheese burger</h3>
-                            <img src="https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Double-Cheeseburger.jpg?$Product_Mobile$" alt="Double cheese burger" title="Double cheese burger" width="100">
+        <section>
+            <h2>Select a burger</h2>
+            This is where you select a burger.
+            <table align="center">
+                <tbody>
+                    <td>
+                        <h3>Double cheese burger</h3>
+                        <img src="https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Double-Cheeseburger.jpg?$Product_Mobile$" alt="Double cheese burger" title="Double cheese burger" width="100">
 
-                            <dl>
-                                <dt>Ingredients</dt>
-                                <dd>Two beef patties</dd>
-                                <dd>Cheese</dd>
-                                <dd>Pickles</dd>
-                                <dd>Chopped onion</dd>
-                                <dd>Ketchup and mustard</dd>
-                            </dl>
+                        <dl>
+                            <dt>Ingredients</dt>
+                            <dd>Two beef patties</dd>
+                            <dd>Cheese</dd>
+                            <dd>Pickles</dd>
+                            <dd>Chopped onion</dd>
+                            <dd>Ketchup and mustard</dd>
+                        </dl>
 
-                            <ul>
-                                <li>440 kcal</li>
-                                <li>Contains gluten and lactose</li>
-                            </ul>
-                        </td>
+                        <ul>
+                            <li>440 kcal</li>
+                            <li>Contains gluten and lactose</li>
+                        </ul>
+                    </td>
 
-                        <td>
-                            <h3>Crispy halloumi burger</h3>
-                            <img src="https://www.jennysmatblogg.nu/wp-content/uploads/img_8985-1-768x512.jpg" alt="Crispy halloumi burger" title="Crispy halloumi burger" width="100">
+                    <td>
+                        <h3>Crispy halloumi burger</h3>
+                        <img src="https://www.jennysmatblogg.nu/wp-content/uploads/img_8985-1-768x512.jpg" alt="Crispy halloumi burger" title="Crispy halloumi burger" width="100">
 
-                            <dl>
-                                <dt>Ingredients</dt>
-                                <dd>Two halloumi slices</dd>
-                                <dd>Onion</dd>
-                                <dd>Tomatoes</dd>
-                                <dd>Salad</dd>
-                            </dl>
+                        <dl>
+                            <dt>Ingredients</dt>
+                            <dd>Two halloumi slices</dd>
+                            <dd>Onion</dd>
+                            <dd>Tomatoes</dd>
+                            <dd>Salad</dd>
+                        </dl>
 
-                            <ul>
-                                <li>430 kcal</li>
-                                <li>Vegetarian</li>
-                                <li>Contains gluten and lactose</li>
-                            </ul>
-                        </td>
+                        <ul>
+                            <li>430 kcal</li>
+                            <li>Vegetarian</li>
+                            <li>Contains gluten and lactose</li>
+                        </ul>
+                    </td>
 
-                        <td>
-                            <h3>Mushroom bean burger</h3>
-                            <img src="https://www.thespruceeats.com/thmb/K27YgK9PMkhtll2EqIW6x-Crg-E=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/vegan-mushroom-bean-burger-recipe-3378623-13_preview1-5b241897fa6bcc0036d2c9bf.jpeg" alt="Mushroom bean burger" title="Mushroom bean burger" width="100">
+                    <td>
+                        <h3>Mushroom bean burger</h3>
+                        <img src="https://www.thespruceeats.com/thmb/K27YgK9PMkhtll2EqIW6x-Crg-E=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/vegan-mushroom-bean-burger-recipe-3378623-13_preview1-5b241897fa6bcc0036d2c9bf.jpeg" alt="Mushroom bean burger" title="Mushroom bean burger" width="100">
 
-                            <dl>
-                                <dt>Ingredients</dt>
-                                <dd>Two mushroom and bean patties</dd>
-                                <dd>Onion</dd>
-                                <dd>Cucumber</dd>
-                                <dd>Spinach</dd>
-                            </dl>
+                        <dl>
+                            <dt>Ingredients</dt>
+                            <dd>Two mushroom and bean patties</dd>
+                            <dd>Onion</dd>
+                            <dd>Cucumber</dd>
+                            <dd>Spinach</dd>
+                        </dl>
 
-                            <ul>
-                                <li>400 kcal</li>
-                                <li>Vegan</li>
-                                <li>Gluten and lactose free</li>
-                            </ul>
-                        </td>
-                    </tbody>
-                </table>
-            </section>
+                        <ul>
+                            <li>400 kcal</li>
+                            <li>Vegan</li>
+                            <li>Gluten and lactose free</li>
+                        </ul>
+                    </td>
+                </tbody>
+            </table>
+        </section>
 
-            <section>
-                <h2>Customer informaton</h2>
-            </section>
+        <section>
+            <h2>Customer informaton</h2>
 
-        </main>
+            <p>
+                <label for="fullname">Full name</label><br>
+                <input type="text" id="fullname" name="fn" required="required" placeholder="First and last name" />
+            </p>
+            <p>
+                <label for="email">E-mail</label><br>
+                <input type="email" id="email" name="em" required="required" placeholder="E-mail address" />
+            </p>
+            <p>
+                <label for="street">Street</label><br>
+                <input type="text" id="street" name="str" placeholder="Street name" />
+            </p>
+            <p>
+                <label for="house">House</label><br>
+                <input type="number" id="house" name="house" placeholder="House number" />
+            </p>
+        </section>
 
-        <footer>
-            <hr>
-            &copy 2020 BurgerOnline
-        </footer>
-    </body>
+    </main>
+
+    <footer>
+        <hr>
+        &copy 2020 BurgerOnline
+    </footer>
+</body>
 </html>
