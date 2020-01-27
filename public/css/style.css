@@ -15,3 +15,7 @@ p.info,
     width: 80%;
     margin: 1vw auto;
 }
+
+.allergy {
+    font-weight: bold;
+}
