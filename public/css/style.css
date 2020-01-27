@@ -2,10 +2,12 @@
 @import url("https://fonts.googleapis.com/css?family=Droid+Serif|Share+Tech+Mono");
 
 body {
-    font-family: "Droid Serif", serif;
+    font-family: "Droid Sansserif", sans-serif;
     font-size: 18px;
 }
-
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Droid Serif", serif;
+}
 a, strong, em {
     color: #0099ff;
 }
@@ -29,7 +31,19 @@ p.info,
 
 }
 
+button {
+    width: 25%;
+    font-size: 150%;
+    font-family: auto;
+    display: table-cell;
+    vertical-align: middle;
+}
+
 button:hover {
     background-color: YellowGreen;
     cursor: pointer;
+}
+
+table {
+    /*width: 40%;*/
 }
