@@ -3,12 +3,12 @@
 
 body {
     font-family: "Droid Sansserif", sans-serif;
-    font-size: 18px;
+    font-size: 1.2em;
     margin: 0 auto;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: "Droid Serif", serif;
-    margin: 20px;
+    margin: 0.5em;
 }
 
 a, strong, em {
@@ -16,7 +16,7 @@ a, strong, em {
 }
 
 header {
-    margin: 50px;
+    margin: 1.5em;
     overflow:hidden;
 }
 
@@ -32,7 +32,7 @@ header h1 {
 }
 
 p {
-    margin: 20px;
+    margin: 1em;
 }
 
 p.info,
@@ -48,13 +48,13 @@ p.info,
 #burgers {
     background-color: black;
     color: white;
-    margin: 50px;
-    padding: 20px;
+    margin: 1.5em;
+    padding: 1em;
     border: 2px dashed white;
 }
 
 #customerinfo {
-    margin: 50px;
+    margin: 1.5em;
     border: 2px dashed;
 }
 
@@ -64,7 +64,7 @@ button {
     font-family: auto;
     display: table-cell;
     vertical-align: middle;
-    margin: 10px 10px 100px 50px;
+    margin: 0.1em 0.1em 3em 1.5em;
 }
 
 button:hover {
