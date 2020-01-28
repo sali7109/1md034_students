@@ -15,6 +15,14 @@ a, strong, em {
     color: #0099ff;
 }
 
+header {
+    margin: 50px;
+}
+
+header img {
+    opacity: 0.8;
+}
+
 p {
     margin: 20px;
 }
