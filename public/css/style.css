@@ -6,6 +6,12 @@ body {
     font-size: 1.2em;
     margin: 0 auto;
 }
+
+@media screen and (max-width: 800px) {
+    body {
+        font-size: 50%;
+    }
+}
 h1, h2, h3, h4, h5, h6 {
     font-family: "Droid Serif", serif;
     margin: 0.5em;
@@ -83,6 +89,11 @@ button:hover {
      border-radius: 0.1em;
      padding: 1em;
      margin: 1em;
+ }
+
+ .box img {
+     width: 20em;
+     height: auto;
  }
 
  .a {
