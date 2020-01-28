@@ -72,7 +72,28 @@ button:hover {
     cursor: pointer;
 }
 
-table {
-    width: 80%;
-    margin: 0 auto;
-}
+.wrapper {
+     display: grid;
+     grid-gap: 1em;
+     grid-template-columns: 20em 20em 20em;
+ }
+
+ .box {
+     color: #fff;
+     border-radius: 0.1em;
+     padding: 1em;
+     margin: 1em;
+ }
+
+ .a {
+     grid-column: 1;
+     grid-row: 1;
+ }
+ .b {
+     grid-column: 2;
+     grid-row: 1;
+ }
+ .c {
+     grid-column: 3;
+     grid-row: 1;
+ }
