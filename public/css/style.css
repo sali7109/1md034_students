@@ -8,11 +8,9 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: "Droid Serif", serif;
-}
-
-h1 {
     margin: 20px;
 }
+
 a, strong, em {
     color: #0099ff;
 }
@@ -36,10 +34,12 @@ p.info,
     color: white;
     margin: 50px;
     padding: 20px;
+    border: 2px dashed white;
 }
 
 #customerinfo {
     margin: 50px;
+    border: 2px dashed;
 }
 
 button {
