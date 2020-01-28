@@ -17,10 +17,18 @@ a, strong, em {
 
 header {
     margin: 50px;
+    overflow:hidden;
 }
 
 header img {
-    opacity: 0.8;
+    opacity: 0.5;
+    width: 100%;
+    height: auto;
+}
+
+header h1 {
+    position: absolute;
+    padding: 4em;
 }
 
 p {
