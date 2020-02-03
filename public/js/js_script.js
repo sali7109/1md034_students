@@ -16,21 +16,34 @@ let burger3 = new menuItem("Mushroom Bean Burger", 400, false, false, "./img/bur
 
 var menu = [burger1, burger2, burger3]
 
+
+var wrapper = document.createElement("wrapper");
+wrapper.setAttribute("class", "wrapper");
+
 let i = 0;
 for (i; i < menu.length; i++) {
+    var box = document.createElement("box");
+
+    if (i == 0) {
+        box.setAttribute("class", "box a");
+    }
+    else if (i == 1) {
+        box.setAttribute("class", "box b");
+    }
+    else {
+        box.setAttribute("class", "box c");
+    }
 
     var h = document.createElement("H3");
-    //var n = document.createTextElement(menu[i].name);
-    //h.appendChild(n);
     h.innerHTML = menu[i].name;
-    document.getElementById("test").appendChild(h);
+    box.appendChild(h);
 
     var image = document.createElement("img");
     image.setAttribute("src", menu[i].imgpath);
     image.setAttribute("alt", menu[i].name);
     image.setAttribute("title", menu[i].name);
-    image.setAttribute("width", 200);
-    document.getElementById("test").appendChild(image);
+    image.setAttribute("height", 200);
+    box.appendChild(image);
 
     var list = document.createElement("ul");
 
@@ -44,7 +57,6 @@ for (i; i < menu.length; i++) {
 
 
     if (menu[i].gluten) {
-        //burgerParagraph.innerHTML = burgerParagraph.innerHTML + " Contains gluten ";
         var gluten = document.createElement("li");
         text = document.createTextNode("Contains gluten");
         gluten.appendChild(text);
@@ -52,7 +64,6 @@ for (i; i < menu.length; i++) {
     }
 
     if (menu[i].lactose) {
-        //burgerParagraph.innerHTML = burgerParagraph.innerHTML + " Contains lactose ";
         var lactose = document.createElement("li");
         text = document.createTextNode("Contains lactose");
         lactose.appendChild(text);
@@ -61,5 +72,7 @@ for (i; i < menu.length; i++) {
 
     list.appendChild(allergy);
 
-    document.getElementById("test").appendChild(list);
+    box.appendChild(list);
+    wrapper.appendChild(box);
 }
+document.getElementById("test").appendChild(wrapper);
