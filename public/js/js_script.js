@@ -20,18 +20,18 @@ var menu = [burger1, burger2, burger3, burger4, burger5]
 
 let i = 0;
 for (i; i < menu.length; i++) {
-	var burgerParagraph = document.createElement("p");
-	burgerParagraph.innerHTML = menu[i].info();
+    var burgerParagraph = document.createElement("p");
+    burgerParagraph.innerHTML = menu[i].info();
 
-  if (menu[i].gluten) {
-    burgerParagraph.innerHTML = burgerParagraph.innerHTML + " Contains gluten ";
-  }
+    if (menu[i].gluten) {
+        burgerParagraph.innerHTML = burgerParagraph.innerHTML + " Contains gluten ";
+    }
 
-  if (menu[i].lactose) {
-    burgerParagraph.innerHTML = burgerParagraph.innerHTML + " Contains lactose ";
-  }
+    if (menu[i].lactose) {
+        burgerParagraph.innerHTML = burgerParagraph.innerHTML + " Contains lactose ";
+    }
 
-	document.getElementById("myID").appendChild(burgerParagraph);
+    document.getElementById("myID").appendChild(burgerParagraph);
 
 
 }
