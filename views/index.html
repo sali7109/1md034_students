@@ -4,8 +4,8 @@
     <title>Order burgers online</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <script src="js/js_script.js"></script>
-    <script src="js/vue_script.js"></script>
+    <script src="js/js_script.js" defer></script>
+    <script src="js/vue_script.js" defer></script>
     <script src="https://vuejs.org/js/vue.js"></script>
 </head>
 <body>
@@ -14,14 +14,15 @@
             <h1>Welcome to BurgerOnline</h1>
             <img src="https://www.lovethegarden.com/sites/default/files/styles/header_image_xl/public/content/articles/UK_plant-finder-vegetables-lettuce_header.jpg?itok=abyiN4rE" alt="Restaurant picture" title="Order burgers online">
         </header>
+
         <section id="burgers">
             <h2>Select a burger</h2>
             This is where you select a burger.
             <div class="wrapper">
                     <div class="box a">
                         <h3>Double cheese burger</h3>
-                        <img src="https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Double-Cheeseburger.jpg?$Product_Mobile$" alt="Double cheese burger" title="Double cheese burger" width="200">
-
+                        <!--<img src="https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Double-Cheeseburger.jpg?$Product_Mobile$" alt="Double cheese burger" title="Double cheese burger" width="200">-->
+                        <img src="./img/burger1.jpg" alt="Double cheese burger" title="Double cheese burger" width="200">
                         <dl>
                             <dt>Ingredients</dt>
                             <dd>Two beef patties</dd>
@@ -126,6 +127,10 @@
         </section>
 
         <button type="submit"><img src="./img/burger.png" height="70px"/> Place order</button>
+
+        <section id="test">
+            <h2>test</h2>
+        </section>
     </main>
 
     <footer>
