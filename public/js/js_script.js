@@ -6,7 +6,7 @@ function menuItem(name, kcal, gluten, lactose, imgpath) {
     this.imgpath = imgpath;
 
     this.info = function() {
-        return this.name + " " + this.kcal + "kCal";
+        return this.name + " " + this.kcal + " kCal ";
     }
 }
 
@@ -15,6 +15,26 @@ let burger2 = new menuItem("Crispy Halloumi Burger", 430, "gluten", "lactose", "
 let burger3 = new menuItem("Mushroom Bean Burger", 400, "gluten free", "lactose free", "./img/burger3.jpg")
 let burger4 = new menuItem("A new burger", 440, "gluten", "lactose", "")
 let burger5 = new menuItem("Another new burger", 440, "gluten", "lactose", "")
+
+var burgerParagraph = document.createElement("p");
+burgerParagraph.innerHTML = burger1.info();
+document.getElementById("myID").appendChild(burgerParagraph);
+
+burgerParagraph = document.createElement("p");
+burgerParagraph.innerHTML = burger2.info();
+document.getElementById("myID").appendChild(burgerParagraph);
+
+burgerParagraph = document.createElement("p");
+burgerParagraph.innerHTML = burger3.info();
+document.getElementById("myID").appendChild(burgerParagraph);
+
+burgerParagraph = document.createElement("p");
+burgerParagraph.innerHTML = burger4.info();
+document.getElementById("myID").appendChild(burgerParagraph);
+
+burgerParagraph = document.createElement("p");
+burgerParagraph.innerHTML = burger5.info();
+document.getElementById("myID").appendChild(burgerParagraph);
 
 console.log(burger1.info());
 console.log(burger2.info());
