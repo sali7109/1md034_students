@@ -47,7 +47,7 @@ Add the following style/behaviour to your website (mostly in style.css but also 
 - [X] Add a border to the two sections
 - [X] Add an image after your headline and make it slightly transparent
 - [X] Place the image behind your headline to finalize your header
-- [ ] Use a grid layout instead of tables for the burger selection section
+- [X] Use a grid layout instead of tables for the burger selection section
 
 
 ## 04 JavaScript and Vue
@@ -57,7 +57,7 @@ Add the following style/behaviour to your website (mostly in style.css but also 
 - [X] Add a menuItem constructor with relevant properties to js_script.js
 - [X] Also use your menuItem constructor to instantiate a total of five burgers in js_script.js
 - [X] Add the Vue instance example code to vue_script.js
-- [ ] Update js_script.js with your JSFiddle code and update vue_script.js with your Vue version
+- [X] Update js_script.js with your JSFiddle code and update vue_script.js with your Vue version
 - [ ] Update js_script.js and vue_script.js again with your array + loop solutions
 - [ ] Rewrite js_script.js and index.html to insert your five burgers dynamically to the burger selection section using JavaScript
 - [ ] Rewrite vue_script.js and index.html to insert your five burgers dynamically to the burger selection section using Vue
