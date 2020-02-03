@@ -1,4 +1,4 @@
-function menuItem(name, kcal, gluten, lactose, imgpath) {
+/*function menuItem(name, kcal, gluten, lactose, imgpath) {
     this.name = name;
     this.kcal = kcal;
     this.gluten = gluten;
@@ -24,3 +24,4 @@ const vm = new Vue({
   	menu: menu,
   }
 })
+*/
