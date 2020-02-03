@@ -75,4 +75,4 @@ for (i; i < menu.length; i++) {
     box.appendChild(list);
     wrapper.appendChild(box);
 }
-document.getElementById("test").appendChild(wrapper);
+document.getElementById("burgers").appendChild(wrapper);
