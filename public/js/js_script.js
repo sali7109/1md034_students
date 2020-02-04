@@ -13,9 +13,8 @@ function menuItem(name, kcal, gluten, lactose, imgpath) {
 let burger1 = new menuItem("Double Cheese Burger", 440, true, true, "./img/burger1.jpg")
 let burger2 = new menuItem("Crispy Halloumi Burger", 430, true, true, "./img/burger2.jpg")
 let burger3 = new menuItem("Mushroom Bean Burger", 400, false, false, "./img/burger3.jpg")
-
+/* JS
 var menu = [burger1, burger2, burger3]
-
 
 var wrapper = document.createElement("wrapper");
 wrapper.setAttribute("class", "wrapper");
@@ -76,3 +75,4 @@ for (i; i < menu.length; i++) {
     wrapper.appendChild(box);
 }
 document.getElementById("burgers").appendChild(wrapper);
+*/

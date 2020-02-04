@@ -1,73 +1,171 @@
+<!-- JS
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Order burgers online</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+<script src="js/js_script.js" defer></script>
+<script src="js/vue_script.js" defer></script>
+<script src="https://vuejs.org/js/vue.js"></script>
+</head>
+<body>
+<main>
+<header>
+<h1>Welcome to BurgerOnline</h1>
+<img src="https://www.lovethegarden.com/sites/default/files/styles/header_image_xl/public/content/articles/UK_plant-finder-vegetables-lettuce_header.jpg?itok=abyiN4rE" alt="Restaurant picture" title="Order burgers online">
+</header>
+
+<section id="burgers">
+<h2>Select a burger</h2>
+This is where you select a burger.
+</section>
+
+<section id="customerinfo">
+<h2>Customer informaton</h2>
+
+<p>
+<label for="fullname">Full name</label><br>
+<input type="text" id="fullname" name="fn" required="required" placeholder="First and last name" />
+</p>
+<p>
+<label for="email">E-mail</label><br>
+<input type="email" id="email" name="em" required="required" placeholder="E-mail address" />
+</p>
+<p>
+<label for="street">Street</label><br>
+<input type="text" id="street" name="str" placeholder="Street name" />
+</p>
+<p>
+<label for="house">House</label><br>
+<input type="number" id="house" name="house" placeholder="House number" />
+</p>
+
+<p>
+<label for="payment">Payment method</label><br />
+<select id="payment" name="pay">
+<option selected="selected">Credit card</option>
+<option>Invoice</option>
+<option>Cash</option>
+<option>Gift card</option>
+</select>
+</p>
+
+<p>
+<label for="gender">Gender</label><br>
+<input type="radio" id="gender" name="gender" value="male"/> Male <br>
+<input type="radio" id="gender" name="gender" value="female"/> Female <br>
+<input type="radio" id="gender" name="gender" value="nonbinary"/> Non-binary <br>
+<input type="radio" id="gender" name="gender" value="other"/> Other <br>
+<input type="radio" id="gender" name="gender" value="undisclosed" checked="checked"/> Undisclosed <br>
+</p>
+
+</section>
+
+<button type="submit"><img src="./img/burger.png" height="70px"/> Place order</button>
+
+</main>
+
+<footer>
+<hr>
+&copy 2020 BurgerOnline
+</footer>
+</body>
+</html>-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Order burgers online</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <script src="js/js_script.js" defer></script>
+    <script src="https://vuejs.org/js/vue.js" defer></script>
+    <!--<script src="js/js_script.js" defer></script>-->
     <script src="js/vue_script.js" defer></script>
-    <script src="https://vuejs.org/js/vue.js"></script>
+
 </head>
 <body>
-    <main>
-        <header>
-            <h1>Welcome to BurgerOnline</h1>
-            <img src="https://www.lovethegarden.com/sites/default/files/styles/header_image_xl/public/content/articles/UK_plant-finder-vegetables-lettuce_header.jpg?itok=abyiN4rE" alt="Restaurant picture" title="Order burgers online">
-        </header>
+    <div id="vuewrapper">
+        <main>
+            <header>
+                <h1>Welcome to BurgerOnline</h1>
+                <img src="https://www.lovethegarden.com/sites/default/files/styles/header_image_xl/public/content/articles/UK_plant-finder-vegetables-lettuce_header.jpg?itok=abyiN4rE" alt="Restaurant picture" title="Order burgers online">
+            </header>
+            <section id="burgers">
+                <h2>Select a burger</h2>
+                This is where you select a burger.
 
-        <section id="burgers">
-            <h2>Select a burger</h2>
-            This is where you select a burger.
-        </section>
+                <div class="wrapper">
 
-        <section id="customerinfo">
-            <h2>Customer informaton</h2>
+                    <div v-for="burger in menu">
+                        <div v-bind:class="burger.box">
+                            <h3>{{ burger.name }}</h3>
+                            <img v-bind:src="burger.imgpath" v-bind:title="burger.name" v-bind:alt="burger.name" height="400"/>
+                            <ul>
+                                <li>{{burger.kcal}} kcal</li>
+                                <section class="allergy">
+                                    <span v-if="burger.gluten">
+                                        <li>Contains gluten</li>
+                                    </span>
+                                    <span v-if="burger.lactose">
+                                        <li>Contains lactose</li>
+                                    </span>
+                                </section>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            <p>
-                <label for="fullname">Full name</label><br>
-                <input type="text" id="fullname" name="fn" required="required" placeholder="First and last name" />
-            </p>
-            <p>
-                <label for="email">E-mail</label><br>
-                <input type="email" id="email" name="em" required="required" placeholder="E-mail address" />
-            </p>
-            <p>
-                <label for="street">Street</label><br>
-                <input type="text" id="street" name="str" placeholder="Street name" />
-            </p>
-            <p>
-                <label for="house">House</label><br>
-                <input type="number" id="house" name="house" placeholder="House number" />
-            </p>
 
-            <p>
-                <label for="payment">Payment method</label><br />
-                <select id="payment" name="pay">
-                    <option selected="selected">Credit card</option>
-                    <option>Invoice</option>
-                    <option>Cash</option>
-                    <option>Gift card</option>
-                </select>
-            </p>
+            <section id="customerinfo">
+                <h2>Customer informaton</h2>
 
-            <p>
-                <label for="gender">Gender</label><br>
-                <input type="radio" id="gender" name="gender" value="male"/> Male <br>
-                <input type="radio" id="gender" name="gender" value="female"/> Female <br>
-                <input type="radio" id="gender" name="gender" value="nonbinary"/> Non-binary <br>
-                <input type="radio" id="gender" name="gender" value="other"/> Other <br>
-                <input type="radio" id="gender" name="gender" value="undisclosed" checked="checked"/> Undisclosed <br>
-            </p>
+                <p>
+                    <label for="fullname">Full name</label><br>
+                    <input type="text" id="fullname" name="fn" required="required" placeholder="First and last name" />
+                </p>
+                <p>
+                    <label for="email">E-mail</label><br>
+                    <input type="email" id="email" name="em" required="required" placeholder="E-mail address" />
+                </p>
+                <p>
+                    <label for="street">Street</label><br>
+                    <input type="text" id="street" name="str" placeholder="Street name" />
+                </p>
+                <p>
+                    <label for="house">House</label><br>
+                    <input type="number" id="house" name="house" placeholder="House number" />
+                </p>
 
-        </section>
+                <p>
+                    <label for="payment">Payment method</label><br />
+                    <select id="payment" name="pay">
+                        <option selected="selected">Credit card</option>
+                        <option>Invoice</option>
+                        <option>Cash</option>
+                        <option>Gift card</option>
+                    </select>
+                </p>
 
-        <button type="submit"><img src="./img/burger.png" height="70px"/> Place order</button>
+                <p>
+                    <label for="gender">Gender</label><br>
+                    <input type="radio" id="gender" name="gender" value="male"/> Male <br>
+                    <input type="radio" id="gender" name="gender" value="female"/> Female <br>
+                    <input type="radio" id="gender" name="gender" value="nonbinary"/> Non-binary <br>
+                    <input type="radio" id="gender" name="gender" value="other"/> Other <br>
+                    <input type="radio" id="gender" name="gender" value="undisclosed" checked="checked"/> Undisclosed <br>
+                </p>
 
-    </main>
+            </section>
 
-    <footer>
-        <hr>
-        &copy 2020 BurgerOnline
-    </footer>
+            <button type="submit"><img src="./img/burger.png" height="70px"/> Place order</button>
+        </main>
+
+        <footer>
+            <hr>
+            &copy 2020 BurgerOnline
+        </footer>
+    </div>
 </body>
 </html>
