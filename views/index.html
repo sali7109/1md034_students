@@ -39,6 +39,10 @@
                                     </span>
                                 </section>
                             </ul>
+
+                            Order this
+                            <input type="checkbox" v-model="burger" v-bind:true-value="burger.name" false-value="no">
+
                         </div>
                     </div>
                 </div>
@@ -98,6 +102,7 @@
                 {{house}}<br>
                 {{payment}}<br>
                 {{gender}}<br>
+                {{toggle}}<br>
             </div>
             </div>
 
