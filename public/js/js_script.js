@@ -1,4 +1,4 @@
-/*function menuItem(name, kcal, gluten, lactose, imgpath, box) {
+function menuItem(name, kcal, gluten, lactose, imgpath, box) {
     this.name = name;
     this.kcal = kcal;
     this.gluten = gluten;
@@ -17,7 +17,17 @@ let burger4 = new menuItem("A New Burger", 400, true, false, "./img/burger3.jpg"
 let burger5 = new menuItem("Another New Burger", 400, false, true, "./img/burger3.jpg", "box c")
 
 var menu = [burger1, burger2, burger3, burger4, burger5]
-*/
+
+
+// Button clicked event listeners
+let myButton = document.getElementById("button");
+myButton.addEventListener("click", buttonClicked);
+
+function buttonClicked() {
+    console.log("Button clicked!");
+}
+
+// Generate burgers
 var wrapper = document.createElement("wrapper");
 wrapper.setAttribute("class", "wrapper");
 
