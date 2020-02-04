@@ -24,8 +24,32 @@ let myButton = document.getElementById("button");
 myButton.addEventListener("click", buttonClicked);
 
 function buttonClicked() {
+
+    var fullName = document.getElementById("fullname").value;
+    var email = document.getElementById("email").value;
+    var street = document.getElementById("street").value;
+    var house = document.getElementById("house").value;
+
+    var radios = document.getElementsByName("gender");
+    var gender;
+    for (i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            gender = radios[i].value;
+            break;
+        }
+    }
+
     console.log("Button clicked!");
+    console.log("Read " + fullName);
+    console.log("Read " + email);
+    console.log("Read " + street);
+    console.log("Read " + house);
+    console.log("Read " + gender);
+
+    return [fullName, email, street, house, gender];
 }
+
+
 
 // Generate burgers
 var wrapper = document.createElement("wrapper");
