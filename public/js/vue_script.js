@@ -2,6 +2,13 @@ const vm = new Vue({
   el: '#vuewrapper',
   data: {
     food: food,
+    fullname: "",
+    email: "",
+    street: "",
+    house: "",
+    payment: "",
+    gender: "",
+    buttonClicked: false,
     },
 
     methods: {
@@ -28,6 +35,10 @@ const vm = new Vue({
             console.log("Read " + house);
             console.log("Read " + payment);
             console.log("Read " + gender);
+
+            /*var text = document.createTextNode(fullName);
+            document.getElementById("sentOrder").appendChild(text);*/
+            this.buttonClicked = true;
 
             return [fullName, email, street, house, payment, gender];
         }
