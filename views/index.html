@@ -1,5 +1,5 @@
 <!-- Vue version -->
-<!--
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,7 +86,9 @@
 
             </section>
 
-            <button type="submit"><img src="./img/burger.png" height="70px"/> Place order</button>
+            <div id="orders">
+                <button v-on:click="markDone(key)" type="submit"><img src="./img/burger.png" height="70px"/> Place order</button>
+            </div>
         </main>
 
         <footer>
@@ -96,9 +98,10 @@
     </div>
 </body>
 </html>
--->
+
 
 <!-- Pure JS version -->
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -171,3 +174,4 @@ This is where you select a burger.
 </footer>
 </body>
 </html>
+-->

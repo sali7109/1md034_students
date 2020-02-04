@@ -1,4 +1,4 @@
-function menuItem(name, kcal, gluten, lactose, imgpath, box) {
+/*function menuItem(name, kcal, gluten, lactose, imgpath, box) {
     this.name = name;
     this.kcal = kcal;
     this.gluten = gluten;
@@ -17,18 +17,18 @@ let burger4 = new menuItem("A New Burger", 400, true, false, "./img/burger3.jpg"
 let burger5 = new menuItem("Another New Burger", 400, false, true, "./img/burger3.jpg", "box c")
 
 var menu = [burger1, burger2, burger3, burger4, burger5]
-
-
-// Button clicked event listeners
+*/
+/*
 let myButton = document.getElementById("button");
 myButton.addEventListener("click", buttonClicked);
-
+*/
 function buttonClicked() {
 
     var fullName = document.getElementById("fullname").value;
     var email = document.getElementById("email").value;
     var street = document.getElementById("street").value;
     var house = document.getElementById("house").value;
+    var payment = document.getElementById("payment").value;
 
     var radios = document.getElementsByName("gender");
     var gender;
@@ -44,9 +44,10 @@ function buttonClicked() {
     console.log("Read " + email);
     console.log("Read " + street);
     console.log("Read " + house);
+    console.log("Read " + payment);
     console.log("Read " + gender);
 
-    return [fullName, email, street, house, gender];
+    return [fullName, email, street, house, payment, gender];
 }
 
 
