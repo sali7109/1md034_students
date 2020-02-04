@@ -8,8 +8,8 @@ const vm = new Vue({
     house: "",
     payment: "",
     gender: "",
-    burger: "",
     buttonClicked: false,
+    checkedBurgers: [],
     },
 
     methods: {
@@ -29,6 +29,14 @@ const vm = new Vue({
                 }
             }
 
+            var checks = document.getElementsByName("checkbox")
+            var burgers = [];
+            for (i = 0; i < checks.length; i++) {
+                if (checks[i].checked) {
+                    burgers.push(checks[i].value);
+                }
+            }
+
             console.log("Button clicked!");
             console.log("Read " + fullName);
             console.log("Read " + email);
@@ -36,6 +44,7 @@ const vm = new Vue({
             console.log("Read " + house);
             console.log("Read " + payment);
             console.log("Read " + gender);
+            console.log("Read " + burgers);
 
             this.buttonClicked = true;
 

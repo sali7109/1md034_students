@@ -40,14 +40,12 @@
                                 </section>
                             </ul>
 
-                            Order this
-                            <input type="checkbox" v-model="burger" v-bind:true-value="burger.name" false-value="no">
-
+                            Order this burger
+                            <input type="checkbox" name="checkbox" v-bind:value="burger.name" v-model="checkedBurgers">
                         </div>
                     </div>
                 </div>
             </section>
-
 
             <section id="customerinfo">
                 <h2>Customer informaton</h2>
@@ -94,16 +92,18 @@
                 <button v-on:click="markDone(key)" type="submit"><img src="./img/burger.png" height="70px"/> Place order</button>
 
 
-            <div v-if="buttonClicked">
-                <h2>Your order</h2>
-                {{fullname}}<br>
-                {{email}}<br>
-                {{street}}<br>
-                {{house}}<br>
-                {{payment}}<br>
-                {{gender}}<br>
-                {{toggle}}<br>
-            </div>
+                <div v-if="buttonClicked">
+                    <h2>Your order</h2>
+                    <p>
+                        {{fullname}}<br>
+                        {{email}}<br>
+                        {{street}}<br>
+                        {{house}}<br>
+                        {{payment}}<br>
+                        {{gender}}<br>
+                        {{checkedBurgers}}
+                    </p>
+                </div>
             </div>
 
         </main>
