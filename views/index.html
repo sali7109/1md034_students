@@ -10,6 +10,12 @@
     <script src="https://vuejs.org/js/vue.js" defer></script>
     <script src="js/vue_script.js" defer></script>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/deli-very.css">
+    <script src="/vue/vue.js" defer></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="js/deli-very.js" defer></script>
+
 </head>
 <body>
     <div id="vuewrapper">
@@ -30,14 +36,14 @@
                             <img v-bind:src="burger.img" v-bind:title="burger.name" v-bind:alt="burger.name" height="400"/>
                             <ul>
                                 <li>{{burger.kcal}} kcal</li>
-                                <section class="allergy">
+                                <span class="allergy">
                                     <span v-if="burger.gluten">
                                         <li>Contains gluten</li>
                                     </span>
                                     <span v-if="burger.lactose">
                                         <li>Contains lactose</li>
                                     </span>
-                                </section>
+                                </span>
                             </ul>
 
                             Order this burger
@@ -57,14 +63,6 @@
                 <p>
                     <label for="email">E-mail</label><br>
                     <input v-model="email" type="email" id="email" name="em" required="required" placeholder="E-mail address" />
-                </p>
-                <p>
-                    <label for="street">Street</label><br>
-                    <input v-model="street" type="text" id="street" name="str" placeholder="Street name" />
-                </p>
-                <p>
-                    <label for="house">House</label><br>
-                    <input v-model="house" type="number" id="house" name="house" placeholder="House number" />
                 </p>
 
                 <p>
@@ -86,6 +84,18 @@
                     <input v-model="gender" type="radio" id="gender" name="gender" value="undisclosed" checked="checked"/> Undisclosed <br>
                 </p>
 
+                  <h1> Click in the map! </h1>
+                  <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+                  <div class="view-box">
+                    <div id="dots" v-on:click="addOrder">
+                        <div
+                          v-for="(order, key) in orders"
+                          v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+                          {{key}}
+                        </div>
+                    </div>
+                  </div>
+
             </section>
 
             <div id="orders">
@@ -97,8 +107,6 @@
                     <p>
                         {{fullname}}<br>
                         {{email}}<br>
-                        {{street}}<br>
-                        {{house}}<br>
                         {{payment}}<br>
                         {{gender}}<br>
                         {{checkedBurgers}}
