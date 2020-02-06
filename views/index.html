@@ -15,9 +15,8 @@
     <script type="text/javascript" src="js/menu.js"></script>
     <script src="https://vuejs.org/js/vue.js" defer></script>
     <script src="js/vue_script.js" defer></script>
-
-
     <!--<script src="js/deli-very.js" defer></script>-->
+
 </head>
 <body>
     <div id="vuewrapper">
@@ -38,14 +37,14 @@
                             <img v-bind:src="burger.img" v-bind:title="burger.name" v-bind:alt="burger.name" height="400"/>
                             <ul>
                                 <li>{{burger.kcal}} kcal</li>
-                                <section class="allergy">
+                                <span class="allergy">
                                     <span v-if="burger.gluten">
                                         <li>Contains gluten</li>
                                     </span>
                                     <span v-if="burger.lactose">
                                         <li>Contains lactose</li>
                                     </span>
-                                </section>
+                                </span>
                             </ul>
 
                             Order this burger
@@ -85,7 +84,6 @@
                     <input v-model="gender" type="radio" id="gender" name="gender" value="other"/> Other <br>
                     <input v-model="gender" type="radio" id="gender" name="gender" value="undisclosed" checked="checked"/> Undisclosed <br>
                 </p>
-
 
                 <h1> Click in the map! </h1>
                 <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
