@@ -41,6 +41,7 @@ const vm = new Vue({
 
             var radios = document.getElementsByName("gender");
             var gender;
+            var i;
             for (i = 0; i < radios.length; i++) {
                 if (radios[i].checked) {
                     gender = radios[i].value;
@@ -99,6 +100,3 @@ const vm = new Vue({
         },
     }
 })
-
-
-
