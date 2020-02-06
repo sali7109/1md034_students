@@ -58,14 +58,6 @@
                     <label for="email">E-mail</label><br>
                     <input v-model="email" type="email" id="email" name="em" required="required" placeholder="E-mail address" />
                 </p>
-                <p>
-                    <label for="street">Street</label><br>
-                    <input v-model="street" type="text" id="street" name="str" placeholder="Street name" />
-                </p>
-                <p>
-                    <label for="house">House</label><br>
-                    <input v-model="house" type="number" id="house" name="house" placeholder="House number" />
-                </p>
 
                 <p>
                     <label for="payment">Payment method</label><br />
@@ -97,8 +89,6 @@
                     <p>
                         {{fullname}}<br>
                         {{email}}<br>
-                        {{street}}<br>
-                        {{house}}<br>
                         {{payment}}<br>
                         {{gender}}<br>
                         {{checkedBurgers}}
