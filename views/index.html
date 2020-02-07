@@ -90,7 +90,7 @@
                 <div class="view-box">
                     <div id="dots" v-on:click="displayOrder">
                         <div v-bind:style="{ left: localOrder.details.x + 'px', top: localOrder.details.y + 'px'}">
-                        T
+                            T
                     </div>
                 </div>
             </div>
@@ -98,8 +98,9 @@
         </section>
 
         <div id="orders">
+            <div v-on:click="addOrder">
             <button v-on:click="markDone" type="submit">
-                <div v-on:click="addOrder">
+
                     <img src="./img/burger.png" height="70px"/> Place order</button>
                 </div>
 
@@ -107,11 +108,16 @@
             <div v-if="buttonClicked">
                 <h2>Your order</h2>
                 <p>
-                    {{fullname}}<br>
-                    {{email}}<br>
-                    {{payment}}<br>
-                    {{gender}}<br>
-                    {{checkedBurgers}}
+                    Name: {{fullname}}<br>
+                    Email: {{email}}<br>
+                    Payment method: {{payment}}<br>
+                    Gender: {{gender}}<br><br><br>
+
+                    Ordered burgers:
+                    <ul v-for="burger in checkedBurgers">
+                        <li> {{burger}} </li>
+                    <ul>
+                    <br>
                 </p>
             </div>
         </div>

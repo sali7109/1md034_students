@@ -17,6 +17,8 @@ const vm = new Vue({
     localOrder: {details: {x: 0, y: 0}},
     details: {x: 0, y: 0},
     lastOrder: 0,
+    mapClicked: false,
+    customerInfo: [],
     },
 
     methods: {
@@ -51,8 +53,8 @@ const vm = new Vue({
             console.log("Read " + burgers);
 
             this.buttonClicked = true;
-
-            return [fullName, email, payment, gender];
+            this.customerInfo = [fullName, email, payment, gender];
+            return this.customerInfo;
         },
 
         getNext: function() {
@@ -77,6 +79,7 @@ const vm = new Vue({
             },
 
             orderItems: this.checkedBurgers,
+            customerInfo: this.customerInfo,
           });
 
           this.lastOrder = this.lastOrder + 1;
@@ -88,6 +91,7 @@ const vm = new Vue({
            * The click event object contains among other things different
            * coordinates that we need when calculating where in the map the click
            * actually happened. */
+
           let offset = {
             x: event.currentTarget.getBoundingClientRect().left,
             y: event.currentTarget.getBoundingClientRect().top,
@@ -101,6 +105,8 @@ const vm = new Vue({
 
             orderItems: this.checkedBurgers,
           };
+
+          this.mapClicked = true;
         },
     }
 })
