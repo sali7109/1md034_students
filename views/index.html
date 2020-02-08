@@ -1,22 +1,16 @@
-<!-- Vue version -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Order burgers online</title>
     <meta charset="utf-8"/>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/deli-very.css">
     <script src="/vue/vue.js" defer></script>
     <script src="/socket.io/socket.io.js" defer></script>
-
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <script type="text/javascript" src="js/menu.js"></script>
     <script src="https://vuejs.org/js/vue.js" defer></script>
     <script src="js/vue_script.js" defer></script>
-    <!--<script src="js/deli-very.js" defer></script>-->
-
 </head>
 <body>
     <div id="vuewrapper">
@@ -30,7 +24,6 @@
                 This is where you select a burger.
 
                 <div class="wrapper">
-
                     <div v-for="burger in food">
                         <div v-bind:class="burger.box">
                             <h3>{{burger.name}}</h3>
@@ -85,126 +78,53 @@
                     <input v-model="gender" type="radio" id="gender" name="gender" value="undisclosed" checked="checked"/> Undisclosed <br>
                 </p>
 
-                <h1> Click in the map! </h1>
-                <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
-                <div class="view-box">
-                    <div id="dots" v-on:click="displayOrder">
-                        <div v-bind:style="{ left: localOrder.details.x + 'px', top: localOrder.details.y + 'px'}">
-                            T
+                <p>
+                    <h1> Delivery location </h1>
+                    The dot with the T on it on the map below indicates the delivery location.<br>
+                    It is set to a default location to start with. Click on the map to choose a different delivery location. <br>
+
+                    <div class="view-box">
+                        <div id="dots" v-on:click="displayOrder">
+                            <div v-bind:style="{ left: localOrder.details.x + 'px', top: localOrder.details.y + 'px'}">
+                                T
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                    <a href="/dispatcher" target="_blank"> Open dispatcher in new window</a>.
+                </p>
 
-        </section>
+            </section>
 
-        <div id="orders">
-            <div v-on:click="addOrder">
-            <button v-on:click="markDone" type="submit">
-
+            <div id="orders">
+                <div v-on:click="addOrder">
+                    <button v-on:click="markDone" type="submit">
                     <img src="./img/burger.png" height="70px"/> Place order</button>
                 </div>
 
 
-            <div v-if="buttonClicked">
-                <h2>Your order</h2>
-                <p>
-                    Name: {{fullname}}<br>
-                    Email: {{email}}<br>
-                    Payment method: {{payment}}<br>
-                    Gender: {{gender}}<br><br><br>
+                    <div v-if="buttonClicked">
+                        <h2>Your order</h2>
+                        <p>
+                            Name: {{fullname}}<br>
+                            Email: {{email}}<br>
+                            Payment method: {{payment}}<br>
+                            Gender: {{gender}}<br><br><br>
 
-                    Ordered burgers:
-                    <ul v-for="burger in checkedBurgers">
-                        <li> {{burger}} </li>
-                    <ul>
-                    <br>
-                </p>
+                            Ordered burgers:
+                            <ul v-for="burger in checkedBurgers">
+                                <li> {{burger}} </li>
+                                <ul>
+                                <br>
+                        </p>
+                    </div>
             </div>
+
+            </main>
+
+            <footer>
+                <hr>
+                    &copy 2020 BurgerOnline
+            </footer>
         </div>
-
-    </main>
-
-    <footer>
-        <hr>
-        &copy 2020 BurgerOnline
-    </footer>
-</div>
 </body>
 </html>
-
-
-<!-- Pure JS version -->
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Order burgers online</title>
-<meta charset="utf-8"/>
-<link rel="stylesheet" type="text/css" href="./css/style.css">
-<script type="text/javascript" src="js/menu.js"></script>
-<script src="js/js_script.js" defer></script>
-</head>
-<body>
-<main>
-<header>
-<h1>Welcome to BurgerOnline</h1>
-<img src="https://www.lovethegarden.com/sites/default/files/styles/header_image_xl/public/content/articles/UK_plant-finder-vegetables-lettuce_header.jpg?itok=abyiN4rE" alt="Restaurant picture" title="Order burgers online">
-</header>
-
-<section id="burgers">
-<h2>Select a burger</h2>
-This is where you select a burger.
-</section>
-
-<section id="customerinfo">
-<h2>Customer informaton</h2>
-
-<p>
-<label for="fullname">Full name</label><br>
-<input type="text" id="fullname" name="fn" required="required" placeholder="First and last name" />
-</p>
-<p>
-<label for="email">E-mail</label><br>
-<input type="email" id="email" name="em" required="required" placeholder="E-mail address" />
-</p>
-<p>
-<label for="street">Street</label><br>
-<input type="text" id="street" name="str" placeholder="Street name" />
-</p>
-<p>
-<label for="house">House</label><br>
-<input type="number" id="house" name="house" placeholder="House number" />
-</p>
-
-<p>
-<label for="payment">Payment method</label><br />
-<select id="payment" name="pay">
-<option selected="selected">Credit card</option>
-<option>Invoice</option>
-<option>Cash</option>
-<option>Gift card</option>
-</select>
-</p>
-
-<p>
-<label for="gender">Gender</label><br>
-<input type="radio" id="gender" name="gender" value="male"/> Male <br>
-<input type="radio" id="gender" name="gender" value="female"/> Female <br>
-<input type="radio" id="gender" name="gender" value="nonbinary"/> Non-binary <br>
-<input type="radio" id="gender" name="gender" value="other"/> Other <br>
-<input type="radio" id="gender" name="gender" value="undisclosed" checked="checked"/> Undisclosed <br>
-</p>
-
-</section>
-
-<button type="submit" id="button"><img src="./img/burger.png" height="70px"/> Place order</button>
-
-</main>
-
-<footer>
-<hr>
-&copy 2020 BurgerOnline
-</footer>
-</body>
-</html>
--->

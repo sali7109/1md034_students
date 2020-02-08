@@ -2,23 +2,23 @@
 const socket = io();
 
 const vm = new Vue({
-  el: '#vuewrapper',
-  data: {
-    food: food,
-    fullname: "",
-    email: "",
-    street: "",
-    house: "",
-    payment: "",
-    gender: "",
-    buttonClicked: false,
-    checkedBurgers: [],
-    orders: {},
-    localOrder: {details: {x: 0, y: 0}},
-    details: {x: 0, y: 0},
-    lastOrder: 0,
-    mapClicked: false,
-    customerInfo: [],
+    el: '#vuewrapper',
+    data: {
+        food: food,
+        fullname: "",
+        email: "",
+        street: "",
+        house: "",
+        payment: "",
+        gender: "",
+        buttonClicked: false,
+        checkedBurgers: [],
+        orders: {},
+        localOrder: {details: {x: 0, y: 0}},
+        details: {x: 0, y: 0},
+        lastOrder: 0,
+        mapClicked: false,
+        customerInfo: [],
     },
 
     methods: {
@@ -58,55 +58,55 @@ const vm = new Vue({
         },
 
         getNext: function() {
-          /* This function returns the next available key (order number) in
-           * the orders object, it works under the assumptions that all keys
-           * are integers. */
+            /* This function returns the next available key (order number) in
+            * the orders object, it works under the assumptions that all keys
+            * are integers. */
 
-          console.log("order id " + this.lastOrder + 1);
-          return this.lastOrder + 1;
+            console.log("order id " + this.lastOrder + 1);
+            return this.lastOrder + 1;
 
         },
 
         addOrder: function(event) {
-          console.log("details x: " + this.localOrder.details.x);
-          console.log("details y: " + this.localOrder.details.y);
+            console.log("details x: " + this.localOrder.details.x);
+            console.log("details y: " + this.localOrder.details.y);
 
-          socket.emit('addOrder', {
-            orderId: this.getNext(),
-            details: {
-              x: this.localOrder.details.x - 10,
-              y: this.localOrder.details.y - 10,
-            },
+            socket.emit('addOrder', {
+                orderId: this.getNext(),
+                details: {
+                    x: this.localOrder.details.x - 10,
+                    y: this.localOrder.details.y - 10,
+                },
 
-            orderItems: this.checkedBurgers,
-            customerInfo: this.customerInfo,
-          });
+                orderItems: this.checkedBurgers,
+                customerInfo: this.customerInfo,
+            });
 
-          this.lastOrder = this.lastOrder + 1;
+            this.lastOrder = this.lastOrder + 1;
         },
 
         displayOrder: function(event) {
-          /* When you click in the map, a click event object is sent as parameter
-           * to the function designated in v-on:click (i.e. this one).
-           * The click event object contains among other things different
-           * coordinates that we need when calculating where in the map the click
-           * actually happened. */
+            /* When you click in the map, a click event object is sent as parameter
+            * to the function designated in v-on:click (i.e. this one).
+            * The click event object contains among other things different
+            * coordinates that we need when calculating where in the map the click
+            * actually happened. */
 
-          let offset = {
-            x: event.currentTarget.getBoundingClientRect().left,
-            y: event.currentTarget.getBoundingClientRect().top,
-          };
-          this.localOrder = {
-            orderId: this.getNext(),
-            details: {
-              x: event.clientX - 10 - offset.x,
-              y: event.clientY - 10 - offset.y,
-            },
+            let offset = {
+                x: event.currentTarget.getBoundingClientRect().left,
+                y: event.currentTarget.getBoundingClientRect().top,
+            };
+            this.localOrder = {
+                orderId: this.getNext(),
+                details: {
+                    x: event.clientX - 10 - offset.x,
+                    y: event.clientY - 10 - offset.y,
+                },
 
-            orderItems: this.checkedBurgers,
-          };
+                orderItems: this.checkedBurgers,
+            };
 
-          this.mapClicked = true;
+            this.mapClicked = true;
         },
     }
 })

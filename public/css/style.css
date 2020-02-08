@@ -14,7 +14,6 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: "Droid Serif", serif;
-    margin: 0.5em;
 }
 
 a, strong, em {
@@ -61,6 +60,8 @@ p.info,
 
 #customerinfo {
     margin: 1.5em;
+    margin-bottom: 3em;
+    padding: 2em;
     border: 2px dashed;
 }
 
